@@ -1,0 +1,28 @@
+﻿@model IEnumerable<lek10bilerMVC.Model.Person>
+
+<h2>Personer og deres biler</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Person</th>
+            <th>Biler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>
+                    <ul>
+                        @foreach (var bil in person.Biler)
+                        {
+                            <li>@bil.Name (@bil.Year)</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

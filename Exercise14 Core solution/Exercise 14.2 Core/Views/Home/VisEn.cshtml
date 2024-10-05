@@ -1,0 +1,28 @@
+﻿@using Exercise_16_2_Core.Models
+
+@model EnOgAlleViewModel
+@{
+    ViewBag.Title = "VisEn";
+}
+
+<h2>VisEn</h2>
+
+
+@{
+    //Html.RenderPartial("VisEnPerson", Model);
+    //@Html.Action("VisEnPerson", "Home", new { P = Model.ValgtPerson });
+    @await Component.InvokeAsync("VisEnPerson", Model.ValgtPerson)
+}
+
+@section AlleSection
+{
+    <p> Nedenfor er alle personer, vist i en section</p>
+
+    @foreach (Person p in Model.AllePersoner)
+    {
+    @await Component.InvokeAsync("VisEnPerson", p)
+        <br />
+    }
+
+}
+

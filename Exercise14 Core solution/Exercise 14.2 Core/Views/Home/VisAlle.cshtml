@@ -1,0 +1,19 @@
+﻿@using Exercise_16_2_Core.Models
+@model List<Person>
+
+@{
+    ViewBag.Title = "VisAlle";
+}
+
+<h2>VisAlle</h2>
+
+@foreach (Person p in Model)
+{
+    @*@(p.Fornavn + " " + p.Efternavn)*@
+    @Html.Partial("VisEnPerson", p)
+@*    @Html.Action("VisEnPerson", "Home", new { P = p });*@
+    @await Component.InvokeAsync("VisEnPerson", p)
+
+    <br />
+}
+

@@ -1,0 +1,20 @@
+﻿@model PersonMVC.Models.Person
+
+<h2>Person Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Age</th>
+        <td>@Model.Age</td>
+    </tr>
+</table>
+
+<a href="@Url.Action("Index", "Person")">Back to List</a>

@@ -1,0 +1,55 @@
+﻿@model Lesson05.Models.ParkingTicketMachine
+
+@{
+    
+    ViewBag.Title = "Parking Ticket";
+    Layout = "~/Views/Shared/_Layout_ptm.cshtml";
+}
+
+<h2>Parking Ticket Machine</h2>
+
+@using(Html.BeginForm()) {
+    <div class="dataElem">
+        @Html.LabelFor(m => m.TimeNow)
+        <span class="data">
+            @Html.DisplayFor(m => m.TimeNow)
+        </span>
+    </div>
+    <br />
+    <div class="dataElem">
+        @Html.LabelFor(m => m.PaidUntil)
+        <span class="data">
+            @Html.DisplayFor(m => m.PaidUntil)
+        </span>
+</div>
+    <div class="dataElem"><br />
+        @Html.LabelFor(m => m.Info)
+        @if (ViewBag.Payback == false) {
+      
+            <input type="text" value="@Model.AmountInserted kr is paid" class="text-box single-line" readonly="readonly" />
+        }
+        else {
+            <input type="text" value="@ViewBag.PaybackAmount kr is paid back" class="text-box single-line" readonly="readonly" />
+        }
+    </div>
+    <div class="dataElem"><br />
+        @Html.EditorFor(m => m.AmountInserted)
+    </div>
+   
+    
+    <div class="dataElem"><br /><h3>Coin Insert</h3>
+        <input type="submit" id="1" name="1" value="1 kr" /> 
+        <input type="submit" id="2" name="2" value="2 kr" /> 
+        <input type="submit" id="5" name="5" value="5 kr" /> 
+        <input type="submit" id="10" name="10" value="10 kr" /> 
+        <input type="submit" id="20" name="20" value="20 kr" /> 
+    </div>
+    
+    <div class="dataElem"><br /><br /> 
+        <input type="submit" name="confirm" value="Confirm" /> 
+        <input type="submit" name="cancel" value="Cancel" /> 
+    </div>
+    
+    
+
+}

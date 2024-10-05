@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\desktop.ini" />
+    <None Remove="Views\Shared\desktop.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\desktop.ini" />
+    <Content Include="Views\Shared\desktop.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

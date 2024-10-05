@@ -1,0 +1,30 @@
+﻿@using StartUp_CORE.Models
+@{
+    ViewBag.Title = "Address Labels";
+}
+
+<h2>Address Labels: </h2>
+
+@functions {
+    void RenderPerson(Person person)
+    {
+        <div>
+            <p>@person.FirstName @person.LastName</p>
+            <p>@person.Address</p>
+            <p>@person.Zip</p>
+            <p>@person.City</p>
+            <p>@string.Join(", ", person.PhoneNumbers)</p>
+            <p>@person.FirstName @person.LastName is @person.Age years old</p>
+        </div>
+    }
+}
+
+<h3>Person 1:</h3>
+@{
+    RenderPerson(ViewBag.Person1 as Person);
+}
+
+<h3>Person 2:</h3>
+@{
+    RenderPerson(ViewBag.Person2 as Person);
+}

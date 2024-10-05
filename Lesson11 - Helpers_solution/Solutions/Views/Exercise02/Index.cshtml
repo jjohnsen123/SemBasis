@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    
+}
+@model IEnumerable<SelectListItem>
+<h2>Breakfast order</h2>
+@using(Html.BeginForm()) {
+    <p>Your name: @Html.TextBox("fullname")</p>
+    <p>Room number: @Html.TextBox("roomnumber")</p>
+    <p>
+        What would you like to eat for breakfast?<br /><br />
+        <!--ViewBag.BstItems -->
+      @foreach (SelectListItem item in Model) {
+          @Html.CheckBox("breakfastItems", false, new { value = item.Value}) @item.Text<br>
+      }
+   <!--  Html.DropDownListFor(x => x.ToString(),Model) -->
+    </p>
+    <p>When: @Html.TextBox("time")</p>
+    <p>
+        <input type="submit" value="Order" />
+    </p>
+}

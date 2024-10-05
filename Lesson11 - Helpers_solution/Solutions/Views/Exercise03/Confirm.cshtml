@@ -1,0 +1,14 @@
+﻿@model Lesson05.Models.ParkingTicketMachine
+
+@{
+    ViewBag.Title = "Confirm";
+}
+
+<h2>Parking Ticket</h2>
+
+<p>Time issued: <strong>@Model.TimeNow.ToShortTimeString()</strong></p>
+
+<p>Parking paid until: <strong>@Model.PaidUntil.ToShortTimeString()</strong></p>
+
+
+

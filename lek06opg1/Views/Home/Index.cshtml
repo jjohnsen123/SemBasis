@@ -1,0 +1,14 @@
+﻿@model lek06opg1.Models.Person
+@{
+    ViewBag.Title = "My View";
+}
+
+<h1>My First View</h1>
+@*    
+     <h3>My name: @ViewBag.Name</h3>
+     <h3>My age: @ViewBag.Age</h3>
+     <h3>My birthday: @ViewBag.Birthday</h3> 
+*@
+<p>Name: @Model.Name</p>
+<p>Age: @Model.Age</p>
+<p>Birthday: @Model.Birthday.ToString("dd. MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture)</p>

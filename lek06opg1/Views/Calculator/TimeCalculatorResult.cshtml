@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Time Calculator Result";
+}
+
+<h2>Time Calculation Result</h2>
+
+<p>
+    You entered:
+    <br /> Hours: @ViewBag.Hours
+    <br /> Minutes: @ViewBag.Minutes
+    <br /> Seconds: @ViewBag.Seconds
+</p>
+
+<p>Total Times in Seconds: @ViewBag.TotalSeconds</p>
+
+<a href="@Url.Action("TimeCalculator", "Calculator")">Back to Calculator</a>

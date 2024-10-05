@@ -1,0 +1,40 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<table>
+    <td>
+        <p>
+            <b>Title:</b> @ViewBag.Book1.Title <br />
+            <b>Author:</b> @ViewBag.Book1.Author <br />
+            <b>Price:</b> @ViewBag.Book1.Price <br />
+            <b>Publisher:</b> @ViewBag.Book1.Publisher <br />
+            <b>ISBN:</b> @ViewBag.Book1.ISBN
+        </P>
+        <img src="@Url.Content("~/images/" + ViewBag.Book1.ImageUrl)" alt="@ViewBag.Book1.Title" />
+    </td>
+    <td></td>
+    <td>
+        <p>
+            <b>Title:</b> @ViewBag.CD1.Title <br />
+            <b>Artist:</b> @ViewBag.CD1.Artist <br />
+            <b>Price:</b> @ViewBag.CD1.Price <br />
+            <b>Label:</b> @ViewBag.CD1.Label <br />
+            <b>Released:</b> @ViewBag.CD1.Released
+        </p>
+            <img src="@Url.Content("~/images/" + ViewBag.CD1.ImageUrl)" alt="@ViewBag.CD1.Title" />
+    </td>
+    <td>
+        <p><b>Tracks:</b></p>
+        <ul>
+            @foreach (var track in ViewBag.CD1.Tracks)
+            {
+                <li>@track</li>
+            }
+        </ul>
+    </td>
+</table>
+
+
+

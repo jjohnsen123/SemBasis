@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Glass.Name</h2>
+<p>Price: @String.Format("{0:0.00}", ViewBag.Glass.Price)</p>
+<p><img src="\images\@ViewBag.Glass.ImageUrl" alt="@ViewBag.Glass.Name" /></p>
+
+<h2>@ViewBag.Bin35l.Name</h2>
+<p>Price: @String.Format("{0:0.00}", ViewBag.Bin35l.Price)</p>
+<p><img src="\images\@ViewBag.Bin35l.ImageUrl" alt="@ViewBag.Bin35l.Name" /></p>
+
+<h2>@ViewBag.StKnife.Name</h2>
+<p>@ViewBag.StKnife.Manufacturer</p>
+<p>Price: @String.Format("{0:0.00}", ViewBag.StKnife.Price)</p>
+<p><img src="\images\@ViewBag.StKnife.ImageUrl" alt="@ViewBag.StKnife.Name" /></p>

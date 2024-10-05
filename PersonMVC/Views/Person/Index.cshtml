@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PersonMVC.Models.Person>
+
+<h2>Persons List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+                <td>
+                    <a href="@Url.Action("Details", "Person", new { id = person.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Person")">Add New Person</a>

@@ -1,0 +1,31 @@
+﻿@using (Html.BeginForm())
+{
+    <h1>Simple Calculator</h1>
+    <p>
+        @Html.Label("Number 1") <br />
+        @Html.TextBox("Number1", (string)ViewBag.Number1)
+    </p>
+    <p>
+        @Html.Label("Number 2") <br />
+        @Html.TextBox("Number2", (string)ViewBag.Number2)
+    </p>
+    <p>
+        <input type="submit" name="operator" value="+">
+        <input type="submit" name="operator" value="-">
+        <input type="submit" name="operator" value="*">
+        <input type="submit" name="operator" value="/">
+    </p>
+
+    @if (ViewBag.Error != null)
+    {
+        <p style="color: red">@ViewBag.Error</p>
+    }
+
+    @if (ViewBag.Result != null)
+    {
+        <p>
+            Result: @ViewBag.Result
+        </p>
+    }
+}
+

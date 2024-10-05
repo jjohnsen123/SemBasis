@@ -1,0 +1,48 @@
+﻿@{
+
+    ViewBag.Title = "Country Select";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+@using (Html.BeginForm("Index", "Exercise01", FormMethod.Get)) {
+
+    <h3>Countries</h3>
+    <div>
+        @Html.DropDownList("Countries") 
+        <input type="submit" value="Show country code" />
+    </div>
+    <div>
+        <br />
+        @if (ViewBag.CountryCode != null) { 
+            <strong>Country code: </strong>@ViewBag.CountryCode
+        }
+    </div>
+}  
+
+@using (Html.BeginForm()) {
+
+    <h3>Add country</h3>
+    <div>
+        <label style="display: inline-block; width: 75px">Country: </label> @Html.TextBox("country", (string)ViewBag.Country)
+        <br />
+        
+        <label style="display: inline-block; width: 75px; ">Code: </label> @Html.TextBox("code", (string)ViewBag.Code, new { size = "20"})
+        
+        <br />
+        <input type="submit" value="Add" />
+    </div>
+    
+}  
+
+    @* manually coded dropdownlist
+        <select id="countries" name="countries">
+    @foreach (SelectListItem li in ViewBag.Countries) {
+
+        <option value="@li.Value"> @li.Text</option>
+    }
+    </select>*@
+    
