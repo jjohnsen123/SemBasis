@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.MainPage">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Open" Clicked="MenuFlyoutItem_Clicked"/>
+            <MenuFlyoutItem Text="Save as ..." Clicked="MenuFlyoutItem_Clicked"/>
+        </MenuBarItem>
+
+        <MenuBarItem Text="Help">
+            <MenuFlyoutItem Text="About" Clicked="MenuFlyoutItem_Clicked"/>
+        </MenuBarItem>
+
+    </ContentPage.MenuBarItems>
+
+    <Label x:Name="lbl1" Text="This is a label"/>
+
+
+</ContentPage>

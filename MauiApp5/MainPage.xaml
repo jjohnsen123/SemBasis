@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.MainPage" Title="">
+
+    <ScrollView>
+        <FlexLayout Direction="Column">
+            <HorizontalStackLayout>
+                <VerticalStackLayout Padding="30,0" Spacing="5">
+                    <RadioButton x:Name="NorthChoice" Content="North" CheckedChanged="DirectionChoice_CheckedChanged"/>
+                    <RadioButton x:Name="EastChoice" Content="East" CheckedChanged="DirectionChoice_CheckedChanged"/>
+                    <RadioButton x:Name="SouthChoice" Content="South" CheckedChanged="DirectionChoice_CheckedChanged"/>
+                    <RadioButton x:Name="WestChoice" Content="West" CheckedChanged="DirectionChoice_CheckedChanged"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="20,0,0,0">
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center">Lemon</Label>
+                        <CheckBox x:Name="LemonChkBox" CheckedChanged="FruitChkBox_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center">Orange</Label>
+                        <CheckBox x:Name="OrangeChkBox" CheckedChanged="FruitChkBox_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label VerticalOptions="Center">Banana</Label>
+                        <CheckBox x:Name="BananaChkBox" CheckedChanged="FruitChkBox_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Label>Status radiobuttons:</Label>
+            <Label x:Name="RadioStatus"/>
+            <Label>Status checkboxes:</Label>
+            <Label x:Name="CheckboxStatus"/>
+        </FlexLayout>
+    </ScrollView>
+
+
+    
+
+</ContentPage>
