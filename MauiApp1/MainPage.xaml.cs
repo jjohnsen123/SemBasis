@@ -9,20 +9,15 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void Btn1_Clicked(object sender, EventArgs e)
         {
             count++;
 
             if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+                Btn1.Text = $"Clicked this button {count} time";
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
-
-        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
+                Btn1.Text = $"Clicked this button {count} times";
+            SemanticScreenReader.Announce(Btn1.Text);  
 
         }
     }

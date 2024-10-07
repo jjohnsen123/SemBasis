@@ -18,19 +18,18 @@
                 Text="Vis Knap" />
 
             <CheckBox
-                CheckedChanged="CheckBox_CheckedChanged" 
                 />
 
 
             <Button
-                x:Name="CounterBtn"
+                x:Name="Btn1"
                 Text="Click me" 
                 TextColor="Green"
                 FontSize="Large"
                 FontAttributes="Bold"
                 BackgroundColor="Azure"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                Clicked="Btn1_Clicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
