@@ -20,6 +20,14 @@
             SemanticScreenReader.Announce(Btn1.Text);  
 
         }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (ChkBox1.IsChecked)
+                Btn1.IsVisible = false;
+            else
+                Btn1.IsVisible = true;
+        }
     }
 
 }

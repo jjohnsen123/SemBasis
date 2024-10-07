@@ -18,6 +18,8 @@
                 Text="Vis Knap" />
 
             <CheckBox
+                x:Name="ChkBox1"
+                CheckedChanged="CheckBox_CheckedChanged"
                 />
 
 
