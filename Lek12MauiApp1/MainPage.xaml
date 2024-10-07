@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lek12MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout x:Name="entrycontainer"
+            Padding="30,0"
+            Spacing="25">
+
+            <HorizontalStackLayout>
+                <Label Text="Car Model:"/>
+                <Entry x:Name="CarModel" Text="{Binding Path=Model}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Car Horsepower:"/>
+                <Entry x:Name="CarHorsepower" Text="{Binding Path=Horsepower}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Is Car Electric:"/>
+                <CheckBox x:Name="IsCarElectric" IsChecked="{Binding Path=IsElectric}"/>
+            </HorizontalStackLayout>
+            <Button x:Name="btn1" Text="Show Car" Clicked="btn1_Clicked"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
