@@ -1,6 +1,6 @@
 namespace MauiApp2;
 
-public partial class SuperHero : ContentView
+public partial class SuperHero : ContentPage
 {
 	public SuperHero()
 	{
