@@ -1,18 +1,42 @@
-﻿namespace Lek12MauiApp1
+﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Maui.Views;
+
+namespace Lek12MauiApp1
 {
     public partial class MainPage : ContentPage
     {
-        Car car = new Car { Model = "Tesla Model Y", Horsepower = 342, IsElectric = true };
+        private ObservableCollection<Car> cars = new ObservableCollection<Car>();
 
         public MainPage()
         {
             InitializeComponent();
-            entrycontainer.BindingContext = car;
+            cars.Add(new Car("Tesla Model Y", 342, true));
+            cars.Add(new Car("Ford Ka", 800, false));
+            CarList.ItemsSource = cars;
         }
 
-        private void btn1_Clicked(object sender, EventArgs e)
+        private void CarList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DisplayAlert("Car", $"Model: {car.Model}, Horsepower: {car.Horsepower}, Is Electric: {car.IsElectric}", "Ok");
+            EditArea.BindingContext = CarList.SelectedItem;
+        }
+
+        private void ShowCars_Clicked(object sender, EventArgs e)
+        {
+            foreach (var car in cars)
+            {
+                DisplayAlert("Car", $"Model: {car.Model}, HorsePowers: {car.HorsePower}, Electric? {car.IsElectric}", "OK");
+            }
+        }
+
+        private void EditCar_Clicked(object sender, EventArgs e)
+        {
+            cars[0].Model = "Berlingo";
+        }
+
+        private async void ShowEditDialogue_Clicked(object sender, EventArgs e)
+        {
+            EditDialogue popup = new EditDialogue((Car)CarList.SelectedItem);
+            await this.ShowPopupAsync(popup);
         }
     }
 }

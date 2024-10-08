@@ -9,20 +9,37 @@
             Spacing="25">
 
             <HorizontalStackLayout>
-                <Label Text="Car Model:"/>
-                <Entry x:Name="CarModel" Text="{Binding Path=Model}"/>
+                <Border>
+                    <CollectionView x:Name="CarList" SelectionMode="Single" HorizontalOptions="Start" HeightRequest="318" VerticalOptions="Start" WidthRequest="380"
+                                    SelectionChanged="CarList_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Model}" Margin="2"/>
+                                    <Label Text="{Binding HorsePower}" Margin="2"/>
+                                    <Label Text="Electric?" Margin="1"/>
+                                    <CheckBox IsChecked="{Binding IsElectric}" Margin="2"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Border>
+                <VerticalStackLayout x:Name="EditArea">
+                    <Entry Text="{Binding Model, Mode=TwoWay}" HorizontalOptions="Start" HeightRequest="35" Margin="116,95,0,0" VerticalOptions="Start" WidthRequest="143"/>
+                    <Entry Text="{Binding HorsePower, Mode=TwoWay}" HorizontalOptions="Start" HeightRequest="36" Margin="116,135,0,0" VerticalOptions="Start" WidthRequest="143"/>
+                    <CheckBox IsChecked="{Binding IsElectric}" HorizontalOptions="Start" HeightRequest="36" Margin="116,182,0,0" VerticalOptions="Start" WidthRequest="143"/>
+                    <Label Text="Model:" HorizontalOptions="Start" HeightRequest="33" Margin="27,97,0,0" VerticalOptions="Start" WidthRequest="69"/>
+                    <Label Text="HorsePowers:" HorizontalOptions="Start" HeightRequest="36" Margin="27,135,0,0" VerticalOptions="Start" WidthRequest="78"/>
+                    <Label Text="Electric?" HorizontalOptions="Start" HeightRequest="36" Margin="27,181,0,0" VerticalOptions="Start" WidthRequest="78"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Button x:Name="ShowCars" Text="Show Cars" HorizontalOptions="Start" HeightRequest="40" Margin="0,5,5,0" VerticalOptions="Start" WidthRequest="123"
+                            Clicked="ShowCars_Clicked"/>
+                    <Button x:Name="EditCar" Text="Edit car manually to Belingo" HorizontalOptions="Start" HeightRequest="40" Margin="0,5,5,0" VerticalOptions="Start"
+                            Clicked="EditCar_Clicked"/>
+                    <Button x:Name="ShowEditDialogue" Text="Show Edit Dialogue" Clicked="ShowEditDialogue_Clicked"/>
+                </VerticalStackLayout>
             </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Car Horsepower:"/>
-                <Entry x:Name="CarHorsepower" Text="{Binding Path=Horsepower}"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Is Car Electric:"/>
-                <CheckBox x:Name="IsCarElectric" IsChecked="{Binding Path=IsElectric}"/>
-            </HorizontalStackLayout>
-            <Button x:Name="btn1" Text="Show Car" Clicked="btn1_Clicked"/>
-
-
         </VerticalStackLayout>
     </ScrollView>
 
