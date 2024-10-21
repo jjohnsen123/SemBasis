@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace DTO.Model
 {
+
+    enum StudieType
+    {
+        Master,
+        Bachelor,
+        Enkeltfag,
+        Videreuddannelse
+    }
     public class Employee
     {
         public Employee(int employeeId, string name, int YearsEmployeed)
