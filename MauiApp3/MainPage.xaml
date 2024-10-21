@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp3.MainPage">
+
+
+
+    <toolkit:DockLayout>
+        <Button toolkit:DockLayout.DockPosition="Top" CornerRadius="0" Text="North" HeightRequest="50" Clicked="Button_Clicked" />
+        <Button toolkit:DockLayout.DockPosition="Bottom" CornerRadius="0" Text="South" HeightRequest="70" Clicked="Button_Clicked"/>
+        <Button toolkit:DockLayout.DockPosition="Left" HorizontalOptions="End" CornerRadius="0" Text="West" WidthRequest="80" Clicked="Button_Clicked"/>
+        <Button toolkit:DockLayout.DockPosition="Right" HorizontalOptions="End" CornerRadius="0" Text="East" WidthRequest="90" Clicked="Button_Clicked"/>
+        <Editor x:Name="editor" Text="" HorizontalOptions="Fill" VerticalOptions="Fill" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </toolkit:DockLayout>
+
+
+</ContentPage>
