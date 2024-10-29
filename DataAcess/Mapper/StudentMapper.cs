@@ -22,6 +22,17 @@ namespace DataAccess.Mapper
             return new Model.Student(student.Name, student.StudieStart, student.Age, student.StudieType, student.StudieId);
         }
 
+        public static List<DTO.Model.Student> Map(List<Model.Student> students)
+        {
+            List<DTO.Model.Student> retur = new List<DTO.Model.Student>();
+            foreach (Model.Student student in students)
+            {
+                retur.Add(StudentMapper.Map(student));
+            }
+            return retur;
+        }
+
+
         //internal static void Update(DTO.Model.Employee employee, Employee dataemp)
         //{
         //    dataemp.Name = employee.Name;

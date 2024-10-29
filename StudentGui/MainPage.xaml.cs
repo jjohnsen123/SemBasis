@@ -1,13 +1,14 @@
 ﻿using BusinessLogic.BLL;
+using DTO.Model;
 using System.Xml;
 
 namespace StudentGui
 {
-    public partial class StudentView : ContentPage
+    public partial class MainPage : ContentPage
     {
         private readonly StudentBLL _studentBLL;
 
-        public StudentView()
+        public MainPage()
         {
             InitializeComponent();
             _studentBLL = new StudentBLL();
@@ -35,6 +36,24 @@ namespace StudentGui
             else
             {
                 DisplayAlert("Error", "Please enter a valid Student ID", "OK");
+            }
+        }
+
+        private void OnGetAllStudentsClicked(object sender, EventArgs e)
+        {
+            List<Student> students = _studentBLL.getStudents();
+            StudentsListView.ItemsSource = students;
+        }
+
+        private void OnStudentTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null && e.Item is Student student)
+            {
+                NameLabel.Text = student.Name;
+                StudieStartLabel.Text = student.StudieStart.ToString("dd MMM yyyy");
+                AgeLabel.Text = student.Age.ToString();
+                StudieTypeLabel.Text = student.StudieType.ToString();
+                StudieIdLabel.Text = student.StudieId.ToString();
             }
         }
     }

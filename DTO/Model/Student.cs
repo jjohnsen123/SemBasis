@@ -17,14 +17,13 @@ namespace DTO.Model
 
     public class Student
     {
-        [Range(0, 50)]
+        [Required]
         public String Name { get; set; }
         public DateTime StudieStart { get; set; }
         
         [Range(0, 100)]
         public int Age { get; set; }
         public StudieType StudieType { get; set; }
-        [Required]
         public int StudieId { get; set; }
 
         public Student()

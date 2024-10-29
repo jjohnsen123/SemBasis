@@ -8,28 +8,49 @@
                Placeholder="Enter Student ID"
                Keyboard="Numeric" />
 
-        <Button Text="Get Student"
+        <HorizontalStackLayout>
+            <Button Text="Get Student" Margin="0,5,10,0"
                 Clicked="OnGetStudentClicked" />
 
-        <Label Text="Student Details"
+            <Button Text="Get All Students" Margin="0,5,10,0"
+                   Clicked="OnGetAllStudentsClicked" />
+        </HorizontalStackLayout>
+
+
+        <HorizontalStackLayout Padding="20">
+            <VerticalStackLayout Spacing="10">
+                <ListView x:Name="StudentsListView" Margin="0,0,10,0"
+                  ItemTapped="OnStudentTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding Age}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+               <Label Text="Student Details"
                FontSize="Medium"
                FontAttributes="Bold"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
 
-        <Label Text="Name:" FontAttributes="Bold" />
-        <Label x:Name="NameLabel" />
+                <Label Text="Name:" FontAttributes="Bold" />
+                <Label x:Name="NameLabel" />
 
-        <Label Text="Studie Start:" FontAttributes="Bold" />
-        <Label x:Name="StudieStartLabel" />
+                <Label Text="Studie Start:" FontAttributes="Bold" />
+                <Label x:Name="StudieStartLabel" />
 
-        <Label Text="Age:" FontAttributes="Bold" />
-        <Label x:Name="AgeLabel" />
+                <Label Text="Age:" FontAttributes="Bold" />
+                <Label x:Name="AgeLabel" />
 
-        <Label Text="Studie Type:" FontAttributes="Bold" />
-        <Label x:Name="StudieTypeLabel" />
+                <Label Text="Studie Type:" FontAttributes="Bold" />
+                <Label x:Name="StudieTypeLabel" />
 
-        <Label Text="Studie ID:" FontAttributes="Bold" />
-        <Label x:Name="StudieIdLabel" />
+                <Label Text="Studie ID:" FontAttributes="Bold" />
+                <Label x:Name="StudieIdLabel" />
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
     </StackLayout>
 </ContentPage>

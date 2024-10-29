@@ -14,5 +14,10 @@ namespace BusinessLogic.BLL
         {
             return StudentRepository.getStudent(id);
         }
+
+        public List<Student> getStudents()
+        {
+            return StudentRepository.getStudents();
+        }
     }
 }

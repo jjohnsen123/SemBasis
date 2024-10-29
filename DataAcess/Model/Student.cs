@@ -1,4 +1,5 @@
 ﻿using DTO.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,6 +16,7 @@ namespace DataAccess.Model
         public DateTime StudieStart { get; set; }
         public int Age { get; set; }
         public StudieType StudieType { get; set; }
+        [Key]
         public int StudieId { get; set; }
 
 

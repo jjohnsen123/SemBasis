@@ -19,9 +19,9 @@ namespace EmployeeGUIWPF
         Employee emp;
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            emp = bll.getEmployee(Int32.Parse(SearchId.Text));
-            Navn.Content = emp.Name;
-            YearsEmployed.Content = emp.YearsEmployed;
+            //emp = bll.getEmployee(Int32.Parse(SearchId.Text));
+            //Navn.Content = emp.Name;
+            //YearsEmployed.Content = emp.YearsEmployed;
             //NameToChangeOrAdd.Text = emp.Name;
             //Years.Text = emp.YearsEmployed.ToString();
         }

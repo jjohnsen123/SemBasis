@@ -15,7 +15,17 @@ namespace DataAccess.Repositories
         {
             using(StudentContext context = new StudentContext())
             {
-                return StudentMapper.Map(context.Students.Find(id));
+                var student = context.Students.Find(id);
+                return StudentMapper.Map(student);
+            }
+        }
+
+        public static  List<Student> getStudents()
+        {
+            using (StudentContext context = new StudentContext())
+            {
+                var students = context.Students.ToList();
+                return StudentMapper.Map(students);
             }
         }
     }

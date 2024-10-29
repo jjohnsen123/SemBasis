@@ -30,9 +30,11 @@ namespace DataAccess.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().HasData(new Student[] {
-                new Student{StudieId=-1,Name="Olsen", Age=19, StudieStart=DateTime.Now, StudieType=StudieType.Videreuddannelse},
-                new Student{StudieId=-2,Name="Hansen", Age=25, StudieStart=DateTime.Now, StudieType=StudieType.Bachelor},
-                new Student{StudieId=-3, Name = "Jensen", Age = 28, StudieStart = DateTime.Now, StudieType = StudieType.Master}
+                new Student{StudieId=-1,Name="Olsen", Age=19, StudieStart=DateTime.Now, StudieType=DTO.Model.StudieType.Videreuddannelse},
+                new Student{StudieId=-2,Name="Hansen", Age=25, StudieStart=DateTime.Now, StudieType=DTO.Model.StudieType.Bachelor},
+                new Student{StudieId=-3, Name ="Jensen", Age =28, StudieStart =DateTime.Now, StudieType =DTO.Model.StudieType.Master},
+                new Student{StudieId=-45, Name ="Jeppe Johnsen", Age =26, StudieStart =DateTime.Now, StudieType =DTO.Model.StudieType.Videreuddannelse}
+
             });
         }
         public DbSet<Student> Students { get; set; }
